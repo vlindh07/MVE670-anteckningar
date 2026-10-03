@@ -47,10 +47,9 @@ Däremot gäller:
     $
   Det finns endast en funktion av $bb(a)_1, dots, bb(a)_n$ som uppfyller (i)–(iii), nämligen $det(A)$.
   $
-    therefore det(A) = C(bb(a)_1, dots, bb(a)_n) = det(A B) / det(B)
-    <==> det(A B) = det(A) det(B)
+    therefore det(A) = C(bb(a)_1, dots, bb(a)_n) = det(B A) / det(B)
+    <==> det(B A) = det(B) det(A)
   $
-  #oklart[möjligt fel: $C$ definierades som $det(B A) \/ det(B)$, så sista raden borde ge $det(B A) = det(B) det(A)$ (samma påstående med $A$ och $B$ ombytta).]
 ]
 
 === Geometriskt
@@ -64,8 +63,11 @@ Däremot gäller:
     (cx + rr * calc.cos(t), cy + rr * calc.sin(t))
   })
   let ruta(x0, x1) = rect((x0, 0), (x1, 1.6), stroke: 0.8pt + ljusgra)
-  let pil(a, b) = bezier(a, b, ((a.at(0) + b.at(0)) / 2, a.at(1) + 0.35),
-    stroke: 0.9pt + ljusgra, mark: (end: "stealth", fill: ljusgra, scale: 0.7))
+  let pil(a, b) = bezier(a, b, ((a.at(0) + b.at(0)) / 2, a.at(1) + 0.35), stroke: 0.9pt + ljusgra, mark: (
+    end: "stealth",
+    fill: ljusgra,
+    scale: 0.7,
+  ))
   // RR^n, S
   ruta(0, 2.2)
   line(..klump(1.1, 0.8, 0.42, 0), close: true, fill: objekt1.transparentize(72%), stroke: 0.8pt + objekt1)
@@ -86,15 +88,18 @@ Däremot gäller:
   etikett((9.5, 0.8), $f_A f_B (S)$, farg: harlett)
   etikett((11.0, 1.6), $RR^n$, anchor: "south-west")
   // f_A ∘ f_B = f_(A B)
-  bezier((1.1, -0.15), (9.5, -0.15), (5.3, -1.6),
-    stroke: 0.9pt + ljusgra, mark: (end: "stealth", fill: ljusgra, scale: 0.7))
+  bezier((1.1, -0.15), (9.5, -0.15), (5.3, -1.6), stroke: 0.9pt + ljusgra, mark: (
+    end: "stealth",
+    fill: ljusgra,
+    scale: 0.7,
+  ))
   etikett((5.3, -1.2), $f_A compose f_B = f_(A B)$)
 })
 
 $
-  "Vol"(f_A (f_B (S))) &= plus.minus det(A) "vol"(f_B (S)) = plus.minus det(A) det(B) "vol"(S) \
+               "Vol"(f_A (f_B (S))) & = plus.minus det(A) "vol"(f_B (S)) = plus.minus det(A) det(B) "vol"(S) \
   #rotate(90deg, reflow: true)[$=$] & \
-  "vol"(f_(A B) (S)) &= plus.minus det(A B) "Vol"(S)
+                 "vol"(f_(A B) (S)) & = plus.minus det(A B) "Vol"(S)
 $
 
 $ "“"therefore"”" quad det(A B) = det(A) det(B) $
@@ -116,8 +121,7 @@ $ "“"therefore"”" quad det(A B) = det(A) det(B) $
 = Kofaktorutveckling
 
 #definition[
-  Om $A$ är av typ $n times n$ låter vi $D_(i j)$ beteckna determinanten av den matris vi får om vi stryker rad $i$ och kolumn $j$ i $A$. ($D_(i j)$ kallas *kofaktor*\/*underdeterminant*.)
-  #oklart[tecknet mellan "kofaktor" och "underdeterm." är otydligt (? eller /)]
+  Om $A$ är av typ $n times n$ låter vi $D_(i j)$ beteckna determinanten av den matris vi får om vi stryker rad $i$ och kolumn $j$ i $A$. ($D_(i j)$ kallas *kofaktor*? *underdeterminant*.)
 ]
 
 #exempel[
@@ -143,7 +147,7 @@ $ "“"therefore"”" quad det(A B) = det(A) det(B) $
   $
     mat(delim: "|", 1, -1, 2; limits(3)^fg(hjalp, -), limits(1)^fg(hjalp, +), limits(0)^fg(hjalp, -); 4, 5, 0)
     &= (-1)^(2 + 1) dot 3 dot mat(delim: "|", -1, 2; 5, 0)
-      + (-1)^(2 + 2) dot 1 dot mat(delim: "|", 1, 2; 4, 0) + 0 dot dots \
+    + (-1)^(2 + 2) dot 1 dot mat(delim: "|", 1, 2; 4, 0) + 0 dot dots \
     &= -3 dot (-10) + 1 dot 1 dot (-8) + 0 = 22
   $
   #ihop[Utveckla efter kolumn 3:]
@@ -156,7 +160,7 @@ $ "“"therefore"”" quad det(A B) = det(A) det(B) $
 #definition[
   Antag $A$ typ $n times n$. *Adjunkten* till $A$ är den $n times n$-matris vars $(i, j)$-element är $(-1)^(i + j) D_(j i)$ (Obs! omvänd ordning), dvs.
   $
-    "adj"(A) = mat(D_11, -D_21, D_31, dots; -D_12, D_22, dots, ; dots.v, , dots.down, )
+    "adj"(A) = mat(D_11, -D_21, D_31, dots; -D_12, D_22, dots, ; dots.v, , dots.down,)
   $
 ]
 
