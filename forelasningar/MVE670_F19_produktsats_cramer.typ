@@ -29,25 +29,25 @@ Däremot gäller:
 #bevis[
   Antag $det(B) != 0$.
   $
-    B A = B mat(bar.v, , bar.v; bb(a)_1, dots, bb(a)_n; bar.v, , bar.v)
-    = mat(bar.v, , bar.v; B bb(a)_1, dots, B bb(a)_n; bar.v, , bar.v)
+    B A = B mat(bar.v, , bar.v; vb(a)_1, dots, vb(a)_n; bar.v, , bar.v)
+    = mat(bar.v, , bar.v; B vb(a)_1, dots, B vb(a)_n; bar.v, , bar.v)
   $
   #ihop[Studera]
   $
-    C(bb(a)_1, dots, bb(a)_n) = det(B A) / det(B) = det(B bb(a)_1 dots B bb(a)_n) / det(B)
-    = D(B bb(a)_1, dots, B bb(a)_n) / det(B).
+    C(vb(a)_1, dots, vb(a)_n) = det(B A) / det(B) = det(B vb(a)_1 dots B vb(a)_n) / det(B)
+    = D(B vb(a)_1, dots, B vb(a)_n) / det(B).
   $
   Denna uppfyller:
   #set enum(numbering: fnum("(i)", guld))
-  + $C(bb(a)_1, dots, bb(a)_n) = 0$ om $bb(a)_i = bb(a)_j$, $i != j$, då $B bb(a)_i = B bb(a)_j$.
-  + $C(bb(a)_1, dots, bb(a)_n)$ är multilinjär (tänk igenom).
+  + $C(vb(a)_1, dots, vb(a)_n) = 0$ om $vb(a)_i = vb(a)_j$, $i != j$, då $B vb(a)_i = B vb(a)_j$.
+  + $C(vb(a)_1, dots, vb(a)_n)$ är multilinjär (tänk igenom).
   + $
-      C(bb(e)_1, dots, bb(e)_n) = D(B bb(e)_1, dots, B bb(e)_n) / det(B)
-      = D(bb(b)_1, dots, bb(b)_n) / det(B) = det(B) / det(B) = 1.
+      C(vb(e)_1, dots, vb(e)_n) = D(B vb(e)_1, dots, B vb(e)_n) / det(B)
+      = D(vb(b)_1, dots, vb(b)_n) / det(B) = det(B) / det(B) = 1.
     $
-  Det finns endast en funktion av $bb(a)_1, dots, bb(a)_n$ som uppfyller (i)–(iii), nämligen $det(A)$.
+  Det finns endast en funktion av $vb(a)_1, dots, vb(a)_n$ som uppfyller (i)–(iii), nämligen $det(A)$.
   $
-    therefore det(A) = C(bb(a)_1, dots, bb(a)_n) = det(B A) / det(B)
+    therefore det(A) = C(vb(a)_1, dots, vb(a)_n) = det(B A) / det(B)
     <==> det(B A) = det(B) det(A)
   $
 ]
@@ -194,25 +194,25 @@ $
 Detta resultat är nära besläktat med:
 
 #sats[Cramers regel][
-  Antag $A = mat(bar.v, , bar.v; bb(a)_1, dots, bb(a)_n; bar.v, , bar.v)$ typ $n times n$ med $det(A) != 0$. Då har $A bb(x) = bb(b)$ den entydiga lösningen
+  Antag $A = mat(bar.v, , bar.v; vb(a)_1, dots, vb(a)_n; bar.v, , bar.v)$ typ $n times n$ med $det(A) != 0$. Då har $A vb(x) = vb(b)$ den entydiga lösningen
   $
-    bb(x) = vec(x_1, dots.v, x_n) quad "där" quad
-    x_j = mat(delim: "|", bar.v, , bar.v, , bar.v; bb(a)_1, dots, bb(b), dots, bb(a)_n; bar.v, , bar.v, , bar.v) / det(A)
+    vb(x) = vec(x_1, dots.v, x_n) quad "där" quad
+    x_j = mat(delim: "|", bar.v, , bar.v, , bar.v; vb(a)_1, dots, vb(b), dots, vb(a)_n; bar.v, , bar.v, , bar.v) / det(A)
   $
-  (byt ut kolumn $bb(a)_j$ mot $bb(b)$).
+  (byt ut kolumn $vb(a)_j$ mot $vb(b)$).
 ]
 
 #bevis[
-  Vi har att $x_1 bb(a)_1 + dots + x_n bb(a)_n = bb(b)$, så
+  Vi har att $x_1 vb(a)_1 + dots + x_n vb(a)_n = vb(b)$, så
   $
-    mat(delim: "|", bb(a)_1, dots, underbrace(bb(b), "kolumn" j), dots, bb(a)_n)
-    &= D(bb(a)_1, dots, bb(b), dots, bb(a)_n) \
-    &= D(bb(a)_1, dots, sum_(k = 1)^n x_k bb(a)_k, dots, bb(a)_n) = lr(\{ "multilinj." \}) \
-    &= sum_(k = 1)^n x_k D(bb(a)_1, dots, bb(a)_k, dots, bb(a)_n) = lr(\{ "alla termer" = 0 "utom" k = j \}) \
-    &= x_j D(bb(a)_1, dots, bb(a)_j, dots, bb(a)_n) = x_j det(A)
+    mat(delim: "|", vb(a)_1, dots, underbrace(vb(b), "kolumn" j), dots, vb(a)_n)
+    &= D(vb(a)_1, dots, vb(b), dots, vb(a)_n) \
+    &= D(vb(a)_1, dots, sum_(k = 1)^n x_k vb(a)_k, dots, vb(a)_n) = lr(\{ "multilinj." \}) \
+    &= sum_(k = 1)^n x_k D(vb(a)_1, dots, vb(a)_k, dots, vb(a)_n) = lr(\{ "alla termer" = 0 "utom" k = j \}) \
+    &= x_j D(vb(a)_1, dots, vb(a)_j, dots, vb(a)_n) = x_j det(A)
   $
   $
-    <==> x_j = mat(delim: "|", bb(a)_1, dots, bb(b), dots, bb(a)_n) / det(A)
+    <==> x_j = mat(delim: "|", vb(a)_1, dots, vb(b), dots, vb(a)_n) / det(A)
   $
 ]
 

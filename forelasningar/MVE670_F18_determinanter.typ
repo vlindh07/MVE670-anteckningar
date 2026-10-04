@@ -18,7 +18,7 @@
 == Fallet $n = 3$
 
 #ihop[Om
-  $ A = mat(bar.v, bar.v, bar.v; fg(basx, bb(a)_1), fg(basy, bb(a)_2), fg(basz, bb(a)_3); bar.v, bar.v, bar.v) $
+  $ A = mat(bar.v, bar.v, bar.v; fg(basx, vb(a)_1), fg(basy, vb(a)_2), fg(basz, vb(a)_3); bar.v, bar.v, bar.v) $
   bör $det(A) = plus.minus "Volym"("Parallellepiped")$.]
 
 #figur({
@@ -38,13 +38,13 @@
   line(a3, a13, stroke: kant)
   hjalplinje(a2, a12)
   hjalplinje(a2, a23)
-  vektor((0, 0), a1, basx, etikett: $bb(a)_1$)
-  vektor((0, 0), a2, basy, etikett: $bb(a)_2$, vid: (1.15, 0.38), anchor: "north-west")
-  vektor((0, 0), a3, basz, etikett: $bb(a)_3$)
+  vektor((0, 0), a1, basx, etikett: $vb(a)_1$)
+  vektor((0, 0), a2, basy, etikett: $vb(a)_2$, vid: (1.15, 0.38), anchor: "north-west")
+  vektor((0, 0), a3, basz, etikett: $vb(a)_3$)
 })
 
 #ihop[Vet sedan tidigare att:]
-$ (bb(a)_1 times bb(a)_2) dot bb(a)_3 = plus.minus "Volym"("Parallellepiped") $
+$ (vb(a)_1 times vb(a)_2) dot vb(a)_3 = plus.minus "Volym"("Parallellepiped") $
 
 Låt oss verifiera detta med ett exempel. Men först, minnesregel för $3 times 3$-determinanter:
 
@@ -57,27 +57,27 @@ Låt oss verifiera detta med ett exempel. Men först, minnesregel för $3 times 
 
 #pagebreak()
 #exempel[
-  Beräkna volymen av den parallellepiped som spänns upp av $bb(v)_1 = (1, 0, 6)$, $bb(v)_2 = (0, 3, 5)$, $bb(v)_3 = (2, 4, 0)$.
+  Beräkna volymen av den parallellepiped som spänns upp av $vb(v)_1 = (1, 0, 6)$, $vb(v)_2 = (0, 3, 5)$, $vb(v)_3 = (2, 4, 0)$.
 ]
 #losning[
   #set enum(numbering: fnum("1.", gron))
   + $
-      mat(delim: "|", bar.v, bar.v, bar.v; bb(v)_1, bb(v)_2, bb(v)_3; bar.v, bar.v, bar.v)
+      mat(delim: "|", bar.v, bar.v, bar.v; vb(v)_1, vb(v)_2, vb(v)_3; bar.v, bar.v, bar.v)
       = mat(delim: "|", limits(1)^+, limits(0)^-, limits(2)^+; 0, 3, 4; 6, 5, 0)
       &= 1 dot (3 dot 0 - 4 dot 5) - 0 dot (dots) + 2 (0 dot 5 - 3 dot 6) \
       &= -20 - 36 = -56
     $
     $therefore "Volym" = 56$.
   + $
-      bb(v)_1 times bb(v)_2 = vec(1, 0, 6) times vec(0, 3, 5) = vec(-18, -5, 3)
-      ==> (bb(v)_1 times bb(v)_2) dot bb(v)_3 = vec(-18, -5, 3) dot vec(2, 4, 0) = -36 - 20 = -56
+      vb(v)_1 times vb(v)_2 = vec(1, 0, 6) times vec(0, 3, 5) = vec(-18, -5, 3)
+      ==> (vb(v)_1 times vb(v)_2) dot vb(v)_3 = vec(-18, -5, 3) dot vec(2, 4, 0) = -36 - 20 = -56
     $
     $therefore "Volym" = 56$.
 ]
 
 #ihop[Kan verifiera i allmänhet att:]
 $
-  mat(delim: "|", a_11, a_12, a_13; a_21, a_22, a_23; a_31, a_32, a_33) = (bb(a)_1 times bb(a)_2) dot bb(a)_3 quad ("övn.")
+  mat(delim: "|", a_11, a_12, a_13; a_21, a_22, a_23; a_31, a_32, a_33) = (vb(a)_1 times vb(a)_2) dot vb(a)_3 quad ("övn.")
 $
 
 == Fallet $n = 2$
@@ -91,21 +91,21 @@ $
   let a1 = (2.4, 0.4)
   let a2 = (0.6, 1.4)
   yta((0, 0), a1, cetz.vector.add(a1, a2), a2, farg: objekt1, kant: true)
-  vektor((0, 0), a1, basx, etikett: $bb(a)_1$)
-  vektor((0, 0), a2, basy, etikett: $bb(a)_2$)
+  vektor((0, 0), a1, basx, etikett: $vb(a)_1$)
+  vektor((0, 0), a2, basy, etikett: $vb(a)_2$)
 })
 
-Tänk på $bb(a)_1, bb(a)_2$ som vektorer i $RR^3$, dvs. $bb(a)_1 = (a_11, a_21, 0)$, $bb(a)_2 = (a_12, a_22, 0)$.
+Tänk på $vb(a)_1, vb(a)_2$ som vektorer i $RR^3$, dvs. $vb(a)_1 = (a_11, a_21, 0)$, $vb(a)_2 = (a_12, a_22, 0)$.
 
 #ihop[Då är]
 $
-  "Area"("Parallellogram") & = "Volym"("Parallellepiped" bb(a)_1, bb(a)_2, bb(e)_3) \
+  "Area"("Parallellogram") & = "Volym"("Parallellepiped" vb(a)_1, vb(a)_2, vb(e)_3) \
                            & = mat(delim: "|", limits(a_11)^+, limits(a_12)^-, limits(0)^+; a_21, a_22, 0; 0, 0, 1)
                              = a_11 a_22 - a_12 a_21 + 0 = mat(delim: "|", a_11, a_12; a_21, a_22) quad "ok!"
 $
 
 #ihop[Låt $f_A : RR^2 -> RR^2$ vara en linjär avbildning,
-  $ f_A (bb(x)) = A bb(x) = (fg(basx, bb(a)_1) space fg(basy, bb(a)_2)) bb(x). $]
+  $ f_A (vb(x)) = A vb(x) = (fg(basx, vb(a)_1) space fg(basy, vb(a)_2)) vb(x). $]
 
 #let _a1 = (1.4, 0.35)
 #let _a2 = (0.35, 1.0)
@@ -116,8 +116,8 @@ $
   // Enhetskvadraten S
   rutnat(x: (0, 1.6), y: (0, 1.6), rutor: false, xetikett: none, yetikett: none)
   yta((0, 0), (1, 0), (1, 1), (0, 1), farg: objekt1, kant: true)
-  vektor((0, 0), (1, 0), basx, etikett: $bb(e)_1$, vid: (1, -0.12), anchor: "north")
-  vektor((0, 0), (0, 1), basy, etikett: $bb(e)_2$)
+  vektor((0, 0), (1, 0), basx, etikett: $vb(e)_1$, vid: (1, -0.12), anchor: "north")
+  vektor((0, 0), (0, 1), basy, etikett: $vb(e)_2$)
   etikett((0.5, 0.5), $S$, farg: objekt1)
   etikett((0.6, -0.75), $"Area"(S) = 1$)
   // f_A
@@ -128,8 +128,8 @@ $
     translate((3.6, 0))
     rutnat(x: (0, 2.1), y: (0, 1.6), rutor: false, xetikett: none, yetikett: none)
     yta((0, 0), _a1, _A((1, 1)), _a2, farg: harlett, kant: true)
-    vektor((0, 0), _a1, basx, etikett: $bb(a)_1$)
-    vektor((0, 0), _a2, basy, etikett: $bb(a)_2$)
+    vektor((0, 0), _a1, basx, etikett: $vb(a)_1$)
+    vektor((0, 0), _a2, basy, etikett: $vb(a)_2$)
     etikett(cetz.vector.add(_A((1, 1)), (0.15, 0.05)), $tilde(S) = f_A (S)$, farg: harlett, anchor: "west")
   })
 })
@@ -142,8 +142,8 @@ $ "Area"(tilde(S)) = plus.minus det(A) dot underbrace("Area"(S), = 1) $
   import cetz.draw: *
   rutnat(x: (0, 2.4), y: (0, 1.9), rutor: false, xetikett: none, yetikett: none)
   yta((0, 0), (_k1, 0), (_k1, _k2), (0, _k2), farg: objekt1, kant: true)
-  vektor((0, 0), (_k1, 0), basx, etikett: $k_1 bb(e)_1$, vid: (_k1, -0.3), anchor: "north")
-  vektor((0, 0), (0, _k2), basy, etikett: $k_2 bb(e)_2$, vid: (-0.15, _k2), anchor: "east")
+  vektor((0, 0), (_k1, 0), basx, etikett: $k_1 vb(e)_1$, vid: (_k1, -0.3), anchor: "north")
+  vektor((0, 0), (0, _k2), basy, etikett: $k_2 vb(e)_2$, vid: (-0.15, _k2), anchor: "east")
   etikett((_k1 / 2, _k2 / 2), $S$, farg: objekt1)
   etikett((_k1 / 2, -1.0), $"Area"(S) = k_1 k_2$)
   group({
@@ -152,15 +152,15 @@ $ "Area"(tilde(S)) = plus.minus det(A) dot underbrace("Area"(S), = 1) $
     let p2 = _A((0, _k2))
     rutnat(x: (0, 3.5), y: (0, 2.4), rutor: false, xetikett: none, yetikett: none)
     yta((0, 0), p1, _A((_k1, _k2)), p2, farg: harlett, kant: true)
-    vektor((0, 0), p1, basx, etikett: $k_1 bb(a)_1$, vid: cetz.vector.add(p1, (0.1, -0.15)), anchor: "north-west")
-    vektor((0, 0), p2, basy, etikett: $k_2 bb(a)_2$)
+    vektor((0, 0), p1, basx, etikett: $k_1 vb(a)_1$, vid: cetz.vector.add(p1, (0.1, -0.15)), anchor: "north-west")
+    vektor((0, 0), p2, basy, etikett: $k_2 vb(a)_2$)
     etikett(cetz.vector.add(_A((_k1, _k2)), (0.15, 0)), $tilde(S) = f_A (S)$, farg: harlett, anchor: "west")
   })
 })
 
 $
-  "Area"(tilde(S)) = plus.minus mat(delim: "|", k_1 bb(a)_1, k_2 bb(a)_2)
-  = plus.minus k_1 k_2 mat(delim: "|", bb(a)_1, bb(a)_2) = plus.minus det(A) dot "Area"(S)
+  "Area"(tilde(S)) = plus.minus mat(delim: "|", k_1 vb(a)_1, k_2 vb(a)_2)
+  = plus.minus k_1 k_2 mat(delim: "|", vb(a)_1, vb(a)_2) = plus.minus det(A) dot "Area"(S)
 $
 
 #figur(langd: 1cm, {
@@ -194,7 +194,7 @@ Detta gäller på samma sätt för volymer i $RR^3$ och i allmänhet:
 
 #formel[
   $
-    f_A : RR^n -> RR^n "linjär med" f_A (bb(x)) = A bb(x)
+    f_A : RR^n -> RR^n "linjär med" f_A (vb(x)) = A vb(x)
     ==> "Vol"_n (f_A (S)) = plus.minus det(A) "Vol"_n (S)
   $
 ]
@@ -205,8 +205,8 @@ Någon minnesregel för $n times n$-matris där $n > 3$ finns ej (och skulle ej 
 
 Vi måste utveckla andra beräkningsmetoder.
 
-#ihop[(ii) + (i) #oklart[står "(ii) + I"; tolkat som egenskap (i), multilinjäritet] medför att om vi bildar $tilde(A)$ genom att addera en multipel av en kolumn till en annan kolumn i $A$ (t.ex. $tilde(A) = (bb(a)_1 + k bb(a)_2, bb(a)_2, dots, bb(a)_n)$), så är $det(tilde(A)) = det(A)$:
-  $ det(tilde(A)) = det(A) + k underbrace(det(bb(a)_2, bb(a)_2, dots, bb(a)_n), = 0) = det(A) $]
+#ihop[(ii) + (i) #oklart[står "(ii) + I"; tolkat som egenskap (i), multilinjäritet] medför att om vi bildar $tilde(A)$ genom att addera en multipel av en kolumn till en annan kolumn i $A$ (t.ex. $tilde(A) = (vb(a)_1 + k vb(a)_2, vb(a)_2, dots, vb(a)_n)$), så är $det(tilde(A)) = det(A)$:
+  $ det(tilde(A)) = det(A) + k underbrace(det(vb(a)_2, vb(a)_2, dots, vb(a)_n), = 0) = det(A) $]
 
 #ihop[Detta ger:]
 
@@ -220,10 +220,10 @@ Vi måste utveckla andra beräkningsmetoder.
   Genom att addera lämpliga multipler av kolumn 1 till de övriga kolumnerna i $A$ får vi:
   $
     det(A) = det mat(1, 0, dots, 0; 0, , , ; dots.v, , A_11, ; 0, , , ; augment: #(hline: 1, vline: 1))
-    = det mat(1, 0, dots, 0; 0, , , ; dots.v, tilde(bb(a))_1, dots, tilde(bb(a))_(n-1); 0, , , ; augment: #(hline: 1, vline: 1))
-    = D(tilde(bb(a))_1, dots, tilde(bb(a))_(n-1))
+    = det mat(1, 0, dots, 0; 0, , , ; dots.v, tilde(vb(a))_1, dots, tilde(vb(a))_(n-1); 0, , , ; augment: #(hline: 1, vline: 1))
+    = D(tilde(vb(a))_1, dots, tilde(vb(a))_(n-1))
   $
-  (tänk på HL som $D(tilde(bb(a))_1, dots, tilde(bb(a))_(n-1))$). Denna funktion uppfyller (i)–(iii), så då måste $D(tilde(bb(a))_1, dots, tilde(bb(a))_(n-1)) = det(A_11)$.
+  (tänk på HL som $D(tilde(vb(a))_1, dots, tilde(vb(a))_(n-1))$). Denna funktion uppfyller (i)–(iii), så då måste $D(tilde(vb(a))_1, dots, tilde(vb(a))_(n-1)) = det(A_11)$.
 
   $therefore det(A) = det(A_11)$.
 ]
