@@ -121,12 +121,13 @@ Vi är alltså intresserade av $A^k vb(x)^((0))$ då $k -> oo$. För detta behö
 ]
 #bevis[
   #set enum(numbering: fnum("(i)", guld))
-  + Låt $A^3 = B$.
+  + Vi visar det för $k = 3$; det allmänna fallet går till på samma sätt. Låt $A^3 = B$.
     $
       B vb(x) & = A^3 vb(x) = A dot A dot A dot vb(x) = A dot A dot lambda dot vb(x) = lambda dot A dot A dot vb(x)
                 = lambda dot A dot lambda dot vb(x) = lambda^2 dot A dot vb(x) \
               & = lambda^3 vb(x)
     $
+    För godtyckligt $k$ byter man ut ett $A vb(x)$ mot $lambda vb(x)$ i taget, totalt $k$ gånger, och får $A^k vb(x) = lambda^k vb(x)$.
   + Låt $c A = D$.
     $ D vb(x) = c A vb(x) = c lambda vb(x) $
 ]
