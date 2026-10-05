@@ -21,3 +21,4 @@
 #include "forelasningar/MVE670_F19_produktsats_cramer.typ"
 #include "forelasningar/MVE670_F20_komplexa_tal.typ"
 #include "forelasningar/MVE670_F21_binomiska_ekv_polynom.typ"
+#include "forelasningar/MVE670_F22_egenvarden_egenvektorer.typ"
