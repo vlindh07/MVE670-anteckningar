@@ -12,7 +12,11 @@
 // =====================================================================
 
 // ---------- Paket (låsta versioner) ----------
-#import "@preview/physica:0.9.8": dv, pdv, dd, vb, vu, va, grad, div, curl, laplacian, evaluated, order, hbar, bra, ket, braket, ketbra, expval, mel, mdet, dmat, imat, zmat, jmat, hmat, tensor, isotope, Re, Im, sgn, rank, trace, Trace, diag
+#import "@preview/physica:0.9.8": dv, pdv, dd, va, grad, div, curl, laplacian, evaluated, order, hbar, bra, ket, braket, ketbra, expval, mel, mdet, dmat, imat, zmat, jmat, hmat, tensor, isotope, Re, Im, sgn, rank, trace, Trace, diag
+// Vektorer: fet, upprätt stil (inte kursiv).
+// Ersätter physicas vb/vu, som ger fet kursiv.
+#let vb(x) = math.upright(math.bold(x))
+#let vu(x) = math.hat(vb(x))
 #import "@preview/zero:0.7.1": num, quan, zi, set-num, set-unit
 #import "@preview/cetz:0.5.2"
 #import "@preview/lilaq:0.6.0" as lq
