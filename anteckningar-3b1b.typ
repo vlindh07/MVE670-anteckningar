@@ -349,6 +349,57 @@
 }
 
 // =====================================================================
+//  Titelsidans grafik – rutnät som gradvis deformeras från I till A
+// =====================================================================
+#let _framsida-rutnat = {
+  let (W, H) = (10.5, 14.85)   // halva A4 i cm, origo i sidans mitt
+  // Klipp sträckan p–q mot sidan (Liang–Barsky)
+  let klipp(p, q) = {
+    let (dx, dy) = (q.at(0) - p.at(0), q.at(1) - p.at(1))
+    let (t0, t1) = (0, 1)
+    for (pp, qq) in ((-dx, p.at(0) + W), (dx, W - p.at(0)), (-dy, p.at(1) + H), (dy, H - p.at(1))) {
+      if pp == 0 {
+        if qq < 0 { return none }
+      } else {
+        let r = qq / pp
+        if pp < 0 {
+          if r > t1 { return none }
+          t0 = calc.max(t0, r)
+        } else {
+          if r < t0 { return none }
+          t1 = calc.min(t1, r)
+        }
+      }
+    }
+    ((p.at(0) + t0 * dx, p.at(1) + t0 * dy), (p.at(0) + t1 * dx, p.at(1) + t1 * dy))
+  }
+  let A = ((1.25, 0.9), (-0.55, 1.05))
+  let (o, s, N) = ((2.5, -7), 2.2, 14)
+  let farger = gradient.linear(bla, turkos, gron)
+  place(top + left, cetz.canvas(length: 1cm, {
+    import cetz.draw: *
+    rect((-W, -H), (W, H), stroke: none)
+    for t in range(N + 1) {
+      let tau = t / N
+      let M = ((1 + tau * (A.at(0).at(0) - 1), tau * A.at(0).at(1)),
+        (tau * A.at(1).at(0), 1 + tau * (A.at(1).at(1) - 1)))
+      let f((x, y)) = (o.at(0) + s * (M.at(0).at(0) * x + M.at(0).at(1) * y),
+        o.at(1) + s * (M.at(1).at(0) * x + M.at(1).at(1) * y))
+      let st = if t == N { 0.9pt + farger.sample(100%) } else { 0.5pt + farger.sample(tau * 100%).transparentize(55%) }
+      for i in range(-12, 13) {
+        for (p, q) in ((f((i, -14)), f((i, 14))), (f((-14, i)), f((14, i)))) {
+          let c = klipp(p, q)
+          if c != none { line(c.at(0), c.at(1), stroke: st) }
+        }
+      }
+    }
+  }))
+  // tona bort rutnätet uppåt så att titeln syns
+  place(top, rect(width: 100%, height: 52%, fill: gradient.linear(
+    (bakgrund, 0%), (bakgrund, 45%), (bakgrund.transparentize(100%), 100%), angle: 90deg)))
+}
+
+// =====================================================================
 //  Huvudmall – #show: anteckningar.with(kurs: [...], kurskod: [...], ...)
 // =====================================================================
 #let anteckningar(
@@ -453,8 +504,8 @@
 
   // ---------- Titelsida + innehåll ----------
   if not forhandsvisning {
-    page(header: none, footer: none, {
-      v(26%)
+    page(header: none, footer: none, background: _framsida-rutnat, {
+      v(6mm)
       stack(
         text(size: 10pt, fill: gra, tracking: 0.15em, upper(kurskod)),
         v(4mm),
@@ -469,7 +520,8 @@
         text(fill: gra, termin),
       )
       v(1fr)
-      text(size: 8.5pt, fill: gra)[Senast kompilerad #_idag]
+      box(fill: bakgrund, inset: (x: 2mm, y: 1.5mm), outset: (x: -2mm),
+        text(size: 8.5pt, fill: gra)[Senast kompilerad #_idag])
     })
 
     block(below: 1.6em, stack(
