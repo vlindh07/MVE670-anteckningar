@@ -1,6 +1,6 @@
 #!/bin/sh
-# Kompilerar main.typ till main.pdf och lägger till PDF:en i committen.
-# Avbryter committen om kompileringen misslyckas.
+# Kontrollerar att main.typ kompilerar innan committen genomförs.
+# PDF:en checkas inte in – den byggs och publiceras av GitHub Actions.
 
 if ! command -v typst >/dev/null 2>&1; then
   echo "pre-commit: typst saknas i PATH" >&2
@@ -11,5 +11,3 @@ typst compile main.typ main.pdf || {
   echo "pre-commit: kompileringen misslyckades, committen avbryts" >&2
   exit 1
 }
-
-git add main.pdf

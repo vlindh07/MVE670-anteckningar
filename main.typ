@@ -7,7 +7,7 @@
   termin: [Läsperiod 1, HT 2026],
   amne: "matematik",
   titel: [Föreläsningsanteckningar],
-  forfattare: [],
+  forfattare: [Vidar Lindh],
 )
 
 // ---------- Föreläsningar (en fil per föreläsning, i ordning) ----------
