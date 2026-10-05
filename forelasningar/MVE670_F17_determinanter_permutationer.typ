@@ -53,7 +53,7 @@ $ det(A) = plus.minus "volymen av parallellepipeden". $
   let a3 = (1.1, 0.9)
   let kant = 0.7pt + ljusgra
   yta((0, 0), a1, add(a1, a3), add(add(a1, a2), a3), add(a2, a3), a2, farg: objekt1)
-  line(a2, add(a1, a2), add(a1, a3), stroke: kant)
+  line(a2, add(a1, a2), stroke: kant)
   line(add(a1, a2), add(add(a1, a2), a3), add(a2, a3), a2, stroke: kant)
   line(a1, add(a1, a3), add(add(a1, a2), a3), stroke: kant)
   line(add(a1, a2), a1, stroke: kant)

@@ -39,7 +39,7 @@
   hjalplinje(a2, a12)
   hjalplinje(a2, a23)
   vektor((0, 0), a1, basx, etikett: $vb(a)_1$)
-  vektor((0, 0), a2, basy, etikett: $vb(a)_2$, vid: (1.15, 0.38), anchor: "north-west")
+  vektor((0, 0), a2, basy, etikett: $vb(a)_2$, vid: (1.2, 0.56), anchor: "north-west")
   vektor((0, 0), a3, basz, etikett: $vb(a)_3$)
 })
 
@@ -205,7 +205,7 @@ Någon minnesregel för $n times n$-matris där $n > 3$ finns ej (och skulle ej 
 
 Vi måste utveckla andra beräkningsmetoder.
 
-#ihop[(ii) + (i) #oklart[står "(ii) + I"; tolkat som egenskap (i), multilinjäritet] medför att om vi bildar $tilde(A)$ genom att addera en multipel av en kolumn till en annan kolumn i $A$ (t.ex. $tilde(A) = (vb(a)_1 + k vb(a)_2, vb(a)_2, dots, vb(a)_n)$), så är $det(tilde(A)) = det(A)$:
+#ihop[Om vi bildar $tilde(A)$ genom att addera en multipel av en kolumn till en annan kolumn i $A$ (t.ex. $tilde(A) = (vb(a)_1 + k vb(a)_2, vb(a)_2, dots, vb(a)_n)$), så är $det(tilde(A)) = det(A)$:
   $ det(tilde(A)) = det(A) + k underbrace(det(vb(a)_2, vb(a)_2, dots, vb(a)_n), = 0) = det(A) $]
 
 #ihop[Detta ger:]
@@ -253,7 +253,7 @@ Vi måste utveckla andra beräkningsmetoder.
     = 2 mat(delim: "|", 12, 2, 5; 0, 1, 5; 0, 0, 1)
     = 2 dot 12 dot 1 dot 1 = 24
   $
-  I första steget adderas $(-3)$ gånger kolumn 3 till kolumn 1, i tredje steget $13$ gånger kolumn 2 till kolumn 1.
+  I första steget adderas $(-3)$ gånger kolumn 3 till kolumn 1, i andra steget bryts faktorn $2$ ut ur kolumn 2 och i tredje steget adderas $13$ gånger kolumn 2 till kolumn 1.
 ]
 
 Jobbigt att addera kolumner. Finns det något sätt att överföra detta till rader? Ja! $A^T$ = byt plats på rader och kolumner i $A$.
@@ -287,5 +287,5 @@ Alltså kan vi beräkna determinanter genom att Gaussa som vanligt, _nästan_:
     &= -2 mat(delim: "|", 1, 3, 2, 2; 0, -4, 2, 6; 0, 0, 1, -1; 0, 0, -5, -11)
     = dots = -128
   $
-  Radoperationerna: rad 1 gånger $(-2)$ adderas till rad 2 och gånger $(-1)$ till rad 3 och 4; rad 2 och 4 byter plats; rad 2 gånger $(-2)$ adderas till rad 4; rad 3 gånger $5$ adderas till rad 4.
+  Först byter kolumn 1 och 4 plats (teckenbyte). Sedan radoperationerna: rad 1 gånger $(-2)$ adderas till rad 2 och gånger $(-1)$ till rad 3 och 4; rad 2 och 4 byter plats; rad 2 gånger $(-2)$ adderas till rad 4; faktorn $-2$ bryts ut ur rad 3; rad 3 gånger $5$ adderas till rad 4.
 ]

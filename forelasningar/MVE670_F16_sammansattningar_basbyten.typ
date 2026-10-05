@@ -70,7 +70,7 @@ Detta illustrerar varför matrismultiplikation är definierad på det sätt som 
 
 #bevis[
   #set enum(numbering: fnum("1)", guld))
-  + Visades igår. #oklart[föreläsning 15 har samma datum (25 september); kontrollera datumet för föreläsning 16]
+  + Visades igår.
   + Vi har
     $
       f_(A^(-1)) compose f_A (vb(x)) & = A^(-1) A vb(x) = I vb(x) = vb(x), \

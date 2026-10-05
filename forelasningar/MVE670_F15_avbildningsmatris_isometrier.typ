@@ -1,9 +1,9 @@
 // =====================================================================
-//  MVE670 Linjär algebra – Föreläsning 15 (25 september 2026)
+//  MVE670 Linjär algebra – Föreläsning 15 (24 september 2026)
 //  Tas in i main.typ med #include "forelasningar/MVE670_F15_avbildningsmatris_isometrier.typ"
 // =====================================================================
 #import "../anteckningar-3b1b.typ": *
-#nyforelasning(15, [Linjära avbildningar (forts.)], [25 september 2026])
+#nyforelasning(15, [Linjära avbildningar (forts.)], [24 september 2026])
 
 = Avbildningsmatrisen
 

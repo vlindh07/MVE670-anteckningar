@@ -97,9 +97,9 @@ Däremot gäller:
 })
 
 $
-               "Vol"(f_A (f_B (S))) & = plus.minus det(A) "vol"(f_B (S)) = plus.minus det(A) det(B) "vol"(S) \
+               "Vol"(f_A (f_B (S))) & = plus.minus det(A) "Vol"(f_B (S)) = plus.minus det(A) det(B) "Vol"(S) \
   #rotate(90deg, reflow: true)[$=$] & \
-                 "vol"(f_(A B) (S)) & = plus.minus det(A B) "Vol"(S)
+                 "Vol"(f_(A B) (S)) & = plus.minus det(A B) "Vol"(S)
 $
 
 $ "“"therefore"”" quad det(A B) = det(A) det(B) $
@@ -121,7 +121,7 @@ $ "“"therefore"”" quad det(A B) = det(A) det(B) $
 = Kofaktorutveckling
 
 #definition[
-  Om $A$ är av typ $n times n$ låter vi $D_(i j)$ beteckna determinanten av den matris vi får om vi stryker rad $i$ och kolumn $j$ i $A$. ($D_(i j)$ kallas *kofaktor*? *underdeterminant*.)
+  Om $A$ är av typ $n times n$ låter vi $D_(i j)$ beteckna determinanten av den matris vi får om vi stryker rad $i$ och kolumn $j$ i $A$. ($D_(i j)$ kallas *underdeterminant* och $(-1)^(i + j) D_(i j)$ kallas *kofaktor*.)
 ]
 
 #exempel[
