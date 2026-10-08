@@ -4,7 +4,7 @@ Föreläsningsanteckningar för kursen **Linjär algebra (MVE670)**, Teknisk fys
 
 📄 **[Läs anteckningarna som PDF](https://vlindh07.github.io/MVE670-anteckningar/)**
 
-Just nu finns föreläsning 13–22 med. De tidigare föreläsningarna läggs till efter hand, och nya tillkommer allt eftersom kursen fortsätter.
+Just nu finns föreläsning 13–24 med. De tidigare föreläsningarna läggs till efter hand, och nya tillkommer allt eftersom kursen fortsätter.
 
 > [!NOTE]
 > Anteckningarna är först skrivna för hand och sedan omgjorda till [Typst](https://typst.app) av Claude. Fel kan därför förekomma.

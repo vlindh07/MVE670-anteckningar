@@ -23,3 +23,4 @@
 #include "forelasningar/MVE670_F21_binomiska_ekv_polynom.typ"
 #include "forelasningar/MVE670_F22_egenvarden_egenvektorer.typ"
 #include "forelasningar/MVE670_F23_diagonalisering.typ"
+#include "forelasningar/MVE670_F24_ode_system_spektralsatsen.typ"
