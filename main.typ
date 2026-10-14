@@ -25,3 +25,4 @@
 #include "forelasningar/MVE670_F23_diagonalisering.typ"
 #include "forelasningar/MVE670_F24_ode_system_spektralsatsen.typ"
 #include "forelasningar/MVE670_F25_spar_googles_sokalgoritm.typ"
+#include "forelasningar/MVE670_F26_vektorrum_underrum.typ"

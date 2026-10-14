@@ -171,9 +171,11 @@
     #body#h(1fr)#text(fill: guld)[$square.filled$]
   ]
 }
-#let losning(body) = block(width: 100%, above: 1em, below: 1em, breakable: true)[
+// qed: false när kvadraten ska sättas för hand med #qed (t.ex. sist i en lista)
+#let qed = [#h(1fr)#text(fill: gron)[$square$]]
+#let losning(qed: true, body) = block(width: 100%, above: 1em, below: 1em, breakable: true)[
   #text(fill: gron, weight: "bold")[Lösning.]
-  #body#h(1fr)#text(fill: gron)[$square$]
+  #body#if qed [#h(1fr)#text(fill: gron)[$square$]]
 ]
 
 // Håll en inledande mening ihop med figuren/grafen/formeln direkt efter
