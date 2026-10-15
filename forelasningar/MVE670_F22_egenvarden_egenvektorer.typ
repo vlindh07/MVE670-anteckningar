@@ -49,7 +49,7 @@ Vi är alltså intresserade av $A^k vb(x)^((0))$ då $k -> oo$. För detta behö
     så kallas $lambda$ ett *egenvärde* och $vb(x)$ en *egenvektor* till $A$.
 ]
 
-#varning[
+#obs[
   $vb(x) != vb(0)$, annars är alla $lambda in RR$ egenvärden.
 ]
 

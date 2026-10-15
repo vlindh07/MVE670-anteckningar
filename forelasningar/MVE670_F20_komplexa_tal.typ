@@ -38,7 +38,7 @@ Addition och multiplikation är kommutativa, associativa, distributiva, … Helt
     $ abs(z) = sqrt(x^2 + y^2) = sqrt(Re(z)^2 + Im(z)^2). $
 ]
 
-#varning[$y^2$, inte $(i y)^2$.]
+#obs[$y^2$, inte $(i y)^2$.]
 
 #anmarkning[
   #set enum(numbering: fnum("(i)", gra))
@@ -141,7 +141,7 @@ För att få en motsvarande geometrisk tolkning av multiplikation och division b
   etikett(flytta((0, 0), 1.1, 38deg), $r$, farg: objekt1, anchor: "south-east")
 })
 
-#varning[
+#obs[
   $theta$ är ej entydigt bestämd: $(r, theta)$ och $(r, theta + 2 pi n)$, där $n in ZZ$, är polära koordinater till samma punkt!
 ]
 

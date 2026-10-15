@@ -132,9 +132,9 @@
   }, body, fet-i-farg: fet-i-farg)
 }
 
-#let _onumrerad(farg, typ, liten: false) = (..args) => {
+#let _onumrerad(farg, typ, liten: false, punkt: ".") = (..args) => {
   let (namn, body) = _namn-och-innehall(args)
-  _ruta(farg, [#typ#if namn != none [ (#namn)].], body, liten: liten)
+  _ruta(farg, [#typ#if namn != none [ (#namn)]#punkt], body, liten: liten)
 }
 
 #let definition = _numrerad(bla, "Definition", fet-i-farg: true)
@@ -146,6 +146,7 @@
 #let exempel = _onumrerad(gron, "Exempel")
 #let intuition = _onumrerad(lila, "Intuition")
 #let varning = _onumrerad(rod, "Varning")
+#let obs = _onumrerad(rod, "Obs!", punkt: "")   // föreläsarens "Obs!" (samma betydelse som varning)
 #let anmarkning = _onumrerad(gra, "Anmärkning", liten: true)
 
 // Nyckelformel – gul ram runt formeln (3b1b:s ”SurroundingRectangle”)
