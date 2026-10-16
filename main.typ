@@ -27,3 +27,4 @@
 #include "forelasningar/MVE670_F25_spar_googles_sokalgoritm.typ"
 #include "forelasningar/MVE670_F26_vektorrum_underrum.typ"
 #include "forelasningar/MVE670_F27_bas_dimension_linjara_avbildningar.typ"
+#include "forelasningar/MVE670_F28_skalarprodukt_gram_schmidt.typ"
